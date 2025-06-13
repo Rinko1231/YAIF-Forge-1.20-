@@ -3,15 +3,15 @@ package com.plr.yaif.event;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.player.Player;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.client.event.RenderBlockScreenEffectEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.client.event.RenderBlockScreenEffectEvent;
 
 import static net.minecraft.world.effect.MobEffects.FIRE_RESISTANCE;
 import static net.minecraft.world.item.Items.MILK_BUCKET;
 
-@Mod.EventBusSubscriber(value = Dist.CLIENT)
+@EventBusSubscriber(value = Dist.CLIENT)
 public class RenderHandler {
     @SubscribeEvent
     public static void onRenderFire(RenderBlockScreenEffectEvent event) {
@@ -34,6 +34,7 @@ public class RenderHandler {
             return;
         }
 
+
         if (player.hasEffect(FIRE_RESISTANCE)) {
             MobEffectInstance effect = player.getEffect(FIRE_RESISTANCE);
             if (effect == null) return;
@@ -49,6 +50,5 @@ public class RenderHandler {
 
             event.setCanceled(true);
         }
-
     }
 }

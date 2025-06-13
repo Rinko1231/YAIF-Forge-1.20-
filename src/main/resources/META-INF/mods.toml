@@ -3,8 +3,8 @@ loaderVersion = "[43,)"
 license = "MIT"
 [[mods]]
 modId = "yaif"
-version = "1.20.1-1.0.0"
-displayName = "WhyAmIonFire Forge"
+version = "1.21.1-1.0.0"
+displayName = "WhyAmIonFire NeoForge"
 authors = [
     "Ellivers",
     "Tapio",
